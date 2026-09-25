@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arjun Mehta — Street Photographer</title>
+  <meta name="description" content="Arjun Mehta is a street photographer capturing candid moments, urban textures, and human stories across cities worldwide." />
+  <meta name="author" content="Arjun Mehta" />
+  <meta property="og:title" content="Arjun Mehta — Street Photographer" />
+  <meta property="og:description" content="Candid moments, urban textures, and human stories captured on the street." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1502923804217-28f3b19c78c4?w=1200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            ink: '#0b0b0b',
+            paper: '#f5f1ea',
+            accent: '#d97706'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-paper text-ink font-sans antialiased">
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-40 backdrop-blur-md bg-paper/80 border-b border-ink/10">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between" aria-label="Primary">
+      <a href="#hero" class="font-display text-xl font-bold tracking-tight">Arjun<span class="text-accent">.</span>Mehta</a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="#gallery" class="hover:text-accent transition">Gallery</a></li>
+        <li><a href="#about" class="hover:text-accent transition">About</a></li>
+        <li><a href="#contact" class="hover:text-accent transition">Contact</a></li>
+      </ul>
+      <button id="menuBtn" class="md:hidden p-2 -mr-2" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-ink/10 bg-paper">
+      <ul class="px-6 py-4 space-y-3 text-sm font-medium">
+        <li><a href="#gallery" class="block py-1 hover:text-accent">Gallery</a></li>
+        <li><a href="#about" class="block py-1 hover:text-accent">About</a></li>
+        <li><a href="#contact" class="block py-1 hover:text-accent">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1502923804217-28f3b19c78c4?auto=format&fit=crop&w=1920&q=80" alt="Candid street scene with pedestrians crossing a sunlit intersection" class="w-full h-full object-cover" loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink/80"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-paper">
+      <p class="uppercase tracking-[0.3em] text-sm mb-4 text-accent">Street Photography</p>
+      <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-black leading-none mb-6">Arjun Mehta</h1>
+      <p class="text-lg md:text-2xl font-light max-w-2xl mx-auto mb-8">Capturing the quiet poetry of everyday life — one frame at a time.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#gallery" class="px-8 py-3 bg-accent text-white font-semibold rounded-full hover:bg-amber-600 transition shadow-lg">View Gallery</a>
+        <a href="#contact" class="px-8 py-3 border border-paper/60 text-paper font-semibold rounded-full hover:bg-paper hover:text-ink transition">Get in Touch</a>
+      </div>
+    </div>
+    <a href="#gallery" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-paper/70 hover:text-paper animate-bounce" aria-label="Scroll to gallery">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </a>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-20 md:py-28 bg-paper">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="uppercase tracking-[0.3em] text-sm text-accent mb-2">Selected Work</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold">The Gallery</h2>
+        <p class="mt-4 text-ink/70 max-w-2xl mx-auto">A curated selection of street photographs from cities across the world.</p>
+      </div>
+      <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <!-- items injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20 md:py-28 bg-ink text-paper">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=900&q=80" alt="Portrait of Arjun Mehta holding a camera" class="rounded-lg shadow-2xl w-full object-cover aspect-[4/5]" loading="lazy" />
+        <div class="absolute -bottom-4 -right-4 bg-accent text-white px-6 py-3 rounded-lg shadow-lg font-display font-bold">Est. 2014</div>
+      </div>
+      <div>
+        <p class="uppercase tracking-[0.3em] text-sm text-accent mb-2">About</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">Behind the Lens</h2>
+        <p class="text-paper/80 text-lg leading-relaxed mb-4">I'm Arjun — a street photographer based between Mumbai and Berlin. For the past decade I've been wandering city streets with a camera, chasing light, gesture, and the fleeting moments that make urban life feel alive.</p>
+        <p class="text-paper/80 text-lg leading-relaxed mb-6">My work has been featured in <em>Aperture</em>, <em>Monocle</em>, and <em>Le Monde</em>, and hangs in private collections across four continents.</p>
+        <div class="grid grid-cols-3 gap-4 border-t border-paper/20 pt-6">
+          <div><div class="font-display text-3xl font-bold text-accent">10+</div><div class="text-sm text-paper/60">Years shooting</div></div>
+          <div><div class="font-display text-3xl font-bold text-accent">42</div><div class="text-sm text-paper/60">Cities</div></div>
+          <div><div class="font-display text-3xl font-bold text-accent">18</div><div class="text-sm text-paper/60">Exhibitions</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 md:py-28 bg-paper">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="uppercase tracking-[0.3em] text-sm text-accent mb-2">Contact</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold">Let's Talk</h2>
+        <p class="mt-4 text-ink/70">Commissions, prints, or just a good conversation about photography.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-10">
+        <form id="contactForm" class="space-y-4" novalidate>
+          <div>
+            <label for="name" class="block text-sm font-medium mb-1">Name</label>
+            <input id="name" name="name" type="text" required class="w-full px-4 py-3 rounded-lg border border-ink/20 bg-white focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Your name" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium mb-1">Email</label>
+            <input id="email" name="email" type="email" required class="w-full px-4 py-3 rounded-lg border border-ink/20 bg-white focus:outline-none focus:ring-2 focus:ring-accent" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium mb-1">Message</label>
+            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded-lg border border-ink/20 bg-white focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Tell me about your project..."></textarea>
+          </div>
+          <button type="submit" class="w-full px-6 py-3 bg-ink text-paper font-semibold rounded-lg hover:bg-accent transition">Send Message</button>
+          <p id="formStatus" class="text-sm text-center hidden"></p>
+        </form>
+        <div class="space-y-6">
+          <div class="bg-ink text-paper p-6 rounded-lg">
+            <h3 class="font-display text-xl font-bold mb-4">Direct</h3>
+            <ul class="space-y-3 text-paper/80">
+              <li class="flex items-center gap-3"><span class="text-accent">✉</span> hello@arjunmehta.photo</li>
+              <li class="flex items-center gap-3"><span class="text-accent">☎</span> +49 30 1234 5678</li>
+              <li class="flex items-center gap-3"><span class="text-accent">◎</span> Berlin · Mumbai</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold mb-4">Follow</h3>
+            <div class="flex gap-3">
+              <a href="#" aria-label="Instagram" class="w-11 h-11 rounded-full bg-ink text-paper flex items-center justify-center hover:bg-accent transition">IG</a>
+              <a href="#" aria-label="Behance" class="w-11 h-11 rounded-full bg-ink text-paper flex items-center justify-center hover:bg-accent transition">Be</a>
+              <a href="#" aria-label="500px" class="w-11 h-11 rounded-full bg-ink text-paper flex items-center justify-center hover:bg-accent transition">500</a>
+              <a href="#" aria-label="Twitter" class="w-11 h-11 rounded-full bg-ink text-paper flex items-center justify-center hover:bg-accent transition">X</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink text-paper/60 py-8 text-center text-sm">
+    <p>© <span id="year"></span> Arjun Mehta. All rights reserved.</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-ink/95 p-4" role="dialog" aria-modal="true" aria-label="Image lightbox">
+    <button id="lbClose" class="absolute top-4 right-4 text-paper text-3xl hover:text-accent" aria-label="Close lightbox">×</button>
+    <button id="lbPrev" class="absolute left-4 top-1/2 -translate-y-1/2 text-paper text-4xl hover:text-accent" aria-label="Previous image">‹</button>
+    <button id="lbNext" class="absolute right-4 top-1/2 -translate-y-1/2 text-paper text-4xl hover:text-accent" aria-label="Next image">›</button>
+    <figure class="max-w-5xl w-full">
+      <img id="lbImg" src="" alt="" class="max-h-[85vh] w-auto mx-auto rounded shadow-2xl" />
+      <figcaption id="lbCap" class="text-paper text-center mt-4 text-sm"></figcaption>
+    </figure>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
